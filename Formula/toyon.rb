@@ -1,25 +1,25 @@
 class Toyon < Formula
   desc "Verify and update Toyon trace sidecars."
   homepage "https://github.com/Scott-Hickmann/toyon-transpiler"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.1.0/toyon-aarch64-apple-darwin.tar.xz"
-      sha256 "eeae2d1803d42d7183733c0c77b4384e16fdbbfc10c35e2571d95afe55db4306"
+      url "https://downloads.toyon.ai/toyon/v0.1.1/toyon-aarch64-apple-darwin.tar.xz"
+      sha256 "366d4b9dc2d04a5d5cec191dc3bdd05a435b25dec9441c239d03d96845f2c06f"
     end
     if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.1.0/toyon-x86_64-apple-darwin.tar.xz"
-      sha256 "529c41fbb6aba6d2ff33488e249f1f3931f561e43df045a4fe91b6ecdd35092b"
+      url "https://downloads.toyon.ai/toyon/v0.1.1/toyon-x86_64-apple-darwin.tar.xz"
+      sha256 "aded61d829b7482ee688a4f742832b68b0cfae2d7a7de029c94a6d8d5090408a"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.1.0/toyon-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a7176df84d45285aef122d383fe5cb0c552a2e0e71a56185b98c7ba2dd1c3cef"
+      url "https://downloads.toyon.ai/toyon/v0.1.1/toyon-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "0904291b5b017384845974677def6126948639e15073e33935daf0ad43acca83"
     end
     if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.1.0/toyon-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "de4ca2a278b0ff5b7609acb053703ce68591a0be6fbc956417f74063eb28c3f5"
+      url "https://downloads.toyon.ai/toyon/v0.1.1/toyon-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "86ffbceb972a92c54ff98da7c8aec4bf1406cd8eef6de16cd72ec222981293f8"
     end
   end
   license "MIT"
