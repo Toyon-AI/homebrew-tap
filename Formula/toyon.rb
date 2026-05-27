@@ -1,35 +1,22 @@
 class Toyon < Formula
   desc "Check Toyon facts, proofs, and evidence accountability."
   homepage "https://github.com/Scott-Hickmann/toyon-transpiler"
-  version "0.3.4"
+  version "0.3.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.3.4/toyon-aarch64-apple-darwin.tar.xz"
-      sha256 "d6ba839a53a2d5f7cf885c782664a9b1dcdc7141b6a8c33a10b47e1e7dbecf27"
+      url "https://downloads.toyon.ai/toyon/v0.3.5/toyon-aarch64-apple-darwin.tar.xz"
+      sha256 "c0d7ed66666789cd77637d459e9c91719f0583601255b0afa7cbe940fb0c7b0c"
     end
     if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.3.4/toyon-x86_64-apple-darwin.tar.xz"
-      sha256 "9ffd6b7e6459aa5403ae37d79f36cf67ca453a599af48ebe7daf0a010ee4e253"
-    end
-  end
-  if OS.linux?
-    if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.3.4/toyon-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f44825468ba5bf1f393c86d7305ed8255e8718927a4981f1eb4c132538f5798e"
-    end
-    if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.3.4/toyon-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8a152f5dae48dd8e38e5501eb3b6cab1264493742766e8fa56bfe7144db5adda"
+      url "https://downloads.toyon.ai/toyon/v0.3.5/toyon-x86_64-apple-darwin.tar.xz"
+      sha256 "4b135c0c305985efa1a68165943631d88752b4be1b3de0d01ce4e2e1225b0ac4"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin": {},
+    "x86_64-apple-darwin":  {},
   }.freeze
 
   def target_triple
@@ -50,8 +37,6 @@ class Toyon < Formula
   def install
     bin.install "toyon" if OS.mac? && Hardware::CPU.arm?
     bin.install "toyon" if OS.mac? && Hardware::CPU.intel?
-    bin.install "toyon" if OS.linux? && Hardware::CPU.arm?
-    bin.install "toyon" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
