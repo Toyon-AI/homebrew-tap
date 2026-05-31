@@ -1,15 +1,15 @@
 class Toyon < Formula
   desc "Check Toyon facts, proofs, and evidence accountability."
   homepage "https://github.com/Scott-Hickmann/toyon-transpiler"
-  version "0.3.5"
+  version "0.3.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.3.5/toyon-aarch64-apple-darwin.tar.xz"
-      sha256 "c0d7ed66666789cd77637d459e9c91719f0583601255b0afa7cbe940fb0c7b0c"
+      url "https://downloads.toyon.ai/toyon/v0.3.6/toyon-aarch64-apple-darwin.tar.xz"
+      sha256 "1cafce5d969bbe07b635e675905aebde140c73955f200904b3fb74064ea5895f"
     end
     if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.3.5/toyon-x86_64-apple-darwin.tar.xz"
-      sha256 "4b135c0c305985efa1a68165943631d88752b4be1b3de0d01ce4e2e1225b0ac4"
+      url "https://downloads.toyon.ai/toyon/v0.3.6/toyon-x86_64-apple-darwin.tar.xz"
+      sha256 "cf237e150221b155eeb5341197391b7efc20a89b06084be946bc5ee14b180633"
     end
   end
   license "MIT"
