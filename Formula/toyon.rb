@@ -1,22 +1,15 @@
 class Toyon < Formula
   desc "Check Toyon facts, proofs, and evidence accountability."
   homepage "https://github.com/Scott-Hickmann/toyon-transpiler"
-  version "0.3.7"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.3.7/toyon-aarch64-apple-darwin.tar.xz"
-      sha256 "1520d69899f3cf7d35d899b7bc82199b7adf84f23e6700250c0b07b003d35de5"
-    end
-    if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.3.7/toyon-x86_64-apple-darwin.tar.xz"
-      sha256 "516a3a0f6b2129044c52b44d81ccbb2040bccccc9380a510928b5540c0bc55e3"
-    end
+  version "0.3.8"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://downloads.toyon.ai/toyon/v0.3.8/toyon-aarch64-apple-darwin.tar.xz"
+    sha256 "1616dd774c99f14cf70622c6066dd7c377fb50ff21b4ee1600862cae868d4e31"
   end
   license "MIT"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin":  {},
   }.freeze
 
   def target_triple
@@ -36,7 +29,6 @@ class Toyon < Formula
 
   def install
     bin.install "toyon" if OS.mac? && Hardware::CPU.arm?
-    bin.install "toyon" if OS.mac? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
