@@ -4,11 +4,11 @@ class Toyon < Formula
   version "0.3.14"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "\1"
+      url "https://downloads.toyon.ai/toyon/v0.3.14/toyon-aarch64-apple-darwin.tar.xz"
       sha256 "0abae9e88050cc83849e419875a569de133eba2a4b2fe8c8fe89c614f59564dd"
     end
     if Hardware::CPU.intel?
-      url "\1"
+      url "https://downloads.toyon.ai/toyon/v0.3.14/toyon-x86_64-apple-darwin.tar.xz"
       sha256 "2cfb16f190719687a746f4528456b78102825462e9c0863332ac51e25ea59bc9"
     end
   end
