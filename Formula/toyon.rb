@@ -1,6 +1,6 @@
 class Toyon < Formula
   desc "Toyon command line interface."
-  homepage "https://github.com/Scott-Hickmann/toyon-transpiler"
+  homepage "https://github.com/Toyon-AI/monorepo"
   version "0.3.15"
   if OS.mac?
     if Hardware::CPU.arm?
