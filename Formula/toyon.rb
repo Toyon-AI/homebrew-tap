@@ -3,8 +3,14 @@ class Toyon < Formula
   homepage "https://github.com/Scott-Hickmann/toyon-transpiler"
   version "0.3.13"
   if OS.mac?
-    url "https://downloads.toyon.ai/toyon/v0.3.13/toyon-aarch64-apple-darwin.tar.xz" if Hardware::CPU.arm?
-    url "https://downloads.toyon.ai/toyon/v0.3.13/toyon-x86_64-apple-darwin.tar.xz" if Hardware::CPU.intel?
+    if Hardware::CPU.arm?
+      url "https://downloads.toyon.ai/toyon/v0.3.13/toyon-aarch64-apple-darwin.tar.xz"
+      sha256 "3c8605e7aa822217506d7a8a69a4ff2188f3e9536fd1b91a9c1268e817980683"
+    end
+    if Hardware::CPU.intel?
+      url "https://downloads.toyon.ai/toyon/v0.3.13/toyon-x86_64-apple-darwin.tar.xz"
+      sha256 "ae63813a6cd00ba98daf49b45ab7b2ad8cc105810723be358f45e76e527e5b1f"
+    end
   end
   license "MIT"
 
