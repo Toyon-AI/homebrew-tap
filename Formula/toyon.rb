@@ -1,23 +1,23 @@
 class Toyon < Formula
   desc "Toyon command line interface."
   homepage "https://github.com/Toyon-AI/monorepo"
-  version "0.3.15"
+  version "0.3.16"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.3.15/toyon-aarch64-apple-darwin.tar.xz"
-      sha256 "2093c8a3439d783e41432d3f6fbec2c96de751961eaee320d3d152ddaf807ef4"
+      url "https://downloads.toyon.ai/toyon/v0.3.16/toyon-aarch64-apple-darwin.tar.xz"
+      sha256 "e0e071dc6712d0843ddade1d5ff5186d6f4f4d5e77dd20563f4554b0b6c59c41"
     end
     if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.3.15/toyon-x86_64-apple-darwin.tar.xz"
-      sha256 "9ee175b7fdfede683f36ea717a0d35d1edb15bc2c4af47dbee5a95763d0f361d"
+      url "https://downloads.toyon.ai/toyon/v0.3.16/toyon-x86_64-apple-darwin.tar.xz"
+      sha256 "4980b00adac6e92cb5ba24822edeb622e4f3ed89ef7d28476ef245e84f10a521"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin": {}
-  }
+    "x86_64-apple-darwin":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -35,12 +35,8 @@ class Toyon < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "toyon"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "toyon"
-    end
+    bin.install "toyon" if OS.mac? && Hardware::CPU.arm?
+    bin.install "toyon" if OS.mac? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
