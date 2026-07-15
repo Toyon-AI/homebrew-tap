@@ -1,15 +1,15 @@
 class Toyon < Formula
   desc "Toyon command line interface."
   homepage "https://github.com/Toyon-AI/monorepo"
-  version "0.3.16"
+  version "0.3.17"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://downloads.toyon.ai/toyon/v0.3.16/toyon-aarch64-apple-darwin.tar.xz"
-      sha256 "e0e071dc6712d0843ddade1d5ff5186d6f4f4d5e77dd20563f4554b0b6c59c41"
+      url "https://downloads.toyon.ai/toyon/v0.3.17/toyon-aarch64-apple-darwin.tar.xz"
+      sha256 "41b3e36668bf3488d329cc25f4a1720dc409fe05a6ebc3a15bb8b7fc784ff300"
     end
     if Hardware::CPU.intel?
-      url "https://downloads.toyon.ai/toyon/v0.3.16/toyon-x86_64-apple-darwin.tar.xz"
-      sha256 "4980b00adac6e92cb5ba24822edeb622e4f3ed89ef7d28476ef245e84f10a521"
+      url "https://downloads.toyon.ai/toyon/v0.3.17/toyon-x86_64-apple-darwin.tar.xz"
+      sha256 "486e1a6f62d4b8d72ca2d6fa61d4bd6e9c81b16787be95c89c4ecfd1bfe99c63"
     end
   end
   license "MIT"
